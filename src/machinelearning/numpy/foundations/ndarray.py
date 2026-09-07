@@ -75,3 +75,6 @@ print(define_np_arraay.shape)
 print("Dimensions",define_np_arraay.ndim)
 print("Size" , define_np_arraay.size)
 print("Dtype", define_np_arraay.dtype)
+
+print("itmeize" , define_np_arraay.itemsize)
+# how many bytes one element of a NumPy array occupies in memory.
