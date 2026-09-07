@@ -52,4 +52,26 @@ sequence  = np.arange(0,10,2)
 print(sequence)
 
 
-# 
+# vector , Matrix , tensor 
+
+vector = np.array([1,2,3,4])
+print("Vector:" , vector)
+
+
+matrix = np.array([[1,2,3,4],
+                    [9,7,6,5]])
+print(matrix)
+
+tensor = np.array([[[1,2],[3,4]],
+                    [[5,6], [7,8]]])
+print(tensor)  
+
+# Array Properties 
+
+define_np_arraay = np.array([[1,2,3],
+                            [4,5,6]])
+
+print(define_np_arraay.shape)
+print("Dimensions",define_np_arraay.ndim)
+print("Size" , define_np_arraay.size)
+print("Dtype", define_np_arraay.dtype)
