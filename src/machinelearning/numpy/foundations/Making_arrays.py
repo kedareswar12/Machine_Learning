@@ -10,7 +10,7 @@ print(zeros)
 seq = np.arange(3,9.2)
 print(seq)
 
-# if you nkow the range and then you need to have these amount of values 
+# if you know the range and then you need to have these amount of values 
 linespace = np.linspace(0,10,15)
 print(linespace)
 
@@ -24,9 +24,14 @@ print(x)
 x = random.rand()
 print(x)
 
+
+"""
+random.randint will create the random integer array you need to mention size and the range of values 
+random.randint(<range like - 100 > , size=(<5>))
+"""
 x=random.randint(100, size=(5))
 
-print(x)
+print("This one ",x)
 
 # default_rng() is NumPy's recommended way to create a random number generator.
 rng = np.random.default_rng()
