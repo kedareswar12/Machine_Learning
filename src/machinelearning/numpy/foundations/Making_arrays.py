@@ -41,3 +41,48 @@ print(rng.integers(1,25,size = 5))
 
 arr = rng.random((2,3))
 print(arr)
+
+
+# numpy array 
+# pass the list in the numpy array function
+
+numpy_array = np.array([1,2,3,4,5])
+print(numpy_array , type(numpy_array))
+# 1D Array ->  (Vector)
+
+# 2D Array (Matrix)
+matrix_list = [[1, 2, 3], [4, 5, 6]]
+numpy_list2d = np.array(matrix_list)
+print(numpy_list2d)
+
+
+# passing the type inside the array fxn 
+float_arr = np.array([1, 2, 3], dtype=float)
+
+print(float_arr , type(float_arr))
+
+# Specify 32-bit integers
+int32_arr = np.array([10, 20, 30], dtype=np.int32)
+print(int32_arr.dtype)
+
+
+"""
+notes 
+------------
+
+* Standard Python lists that can store mixed types
+* NumPy arrays require all elements to be of the same type
+* If you pass mixed types, NumPy will automatically upcast everything to a common type
+
+
+"""
+
+# create a 2d array matrix
+
+arr2d = np.array([[1,2,3] ,[4,5,6] ,[7,8,9]])
+print(arr2d.shape)
+
+
+print(arr2d.itemsize)
+# to get the complete size of the array 
+print(arr2d.nbytes)
