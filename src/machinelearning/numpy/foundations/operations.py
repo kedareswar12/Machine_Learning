@@ -58,6 +58,10 @@ print(arr_slice) # [999  30  40]
 a = np.array([1, 2, 3, 4, 5])
 b = a[1:4]
 
+
+# ************** important to check the copied array or not 
+
+
 print(b.base is a)  # True -> 'b' is a view of 'a'
 
 # what if you need a independent copy 
@@ -71,3 +75,56 @@ independent_slice[0] = 999
 print(np_array)           # [10, 20, 30, 40, 50] (Original remains unchanged)
 print(independent_slice)  # [999, 30, 40]
 print(independent_slice.base)  # None
+
+# Create a 4x4 matrix
+arr_2d = np.array([
+    [10, 11, 12, 13],
+    [20, 21, 22, 23],
+    [30, 31, 32, 33],
+    [40, 41, 42, 43]
+])
+
+# Slice rows 1 to 3 (exclusive) and columns 1 to 3 (exclusive)
+sub_matrix = arr_2d[1:3, 1:3]
+
+print(sub_matrix)
+# Output:
+# [[21 22]
+#  [31 32]]
+
+
+#evem 2d array will create the view not the copy 
+
+# to cretae the random values use default_rng
+
+# using the .defult_rng -> u need to initiate the generator 
+rng = np.random.default_rng()
+
+floats= rng.random((3,4))
+print(floats)
+
+# Generate random integers between 1 and 10 (inclusive of lower, exclusive of upper)
+integers = rng.integers(low=1, high=10, size=(4,5))
+print(integers)  # e.g., [4 8 1 9 2]
+
+normals = rng.standard_normal(size=4)
+print(normals)
+
+array_3d = np.array([
+    # Matrix 0 (Page 0)
+    [
+        [10, 11, 12, 13],
+        [14, 15, 16, 17],
+        [18, 19, 20, 21]
+    ],
+    # Matrix 1 (Page 1)
+    [
+        [30, 31, 32, 33],
+        [34, 35, 36, 37],
+        [38, 39, 40, 41]
+    ]
+])
+
+print(array_3d[1, 0, 2])
+
+print(array_3d.shape)

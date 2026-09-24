@@ -6,6 +6,18 @@ int16       -> 2 bytes -> -32.......767
 int32       -> 4 bytes -> 
 int64       -> 8 bytes
 
+
+int8        -> 1 byte  -> -128 to 127
+int16       -> 2 bytes -> -32,768 to 32,767
+int32       -> 4 bytes -> -2,147,483,648 to 2,147,483,647
+int64       -> 8 bytes -> -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+
+uint8       -> 1 byte  -> 0 to 255
+uint16      -> 2 bytes -> 0 to 65,535
+uint32      -> 4 bytes -> 0 to 4,294,967,295
+uint64      -> 8 bytes -> 0 to 18,446,744,073,709,551,615
+
+
 dropping the sign of the int8 results to unit8  and this has a range -> 0-255
 
 """
@@ -67,3 +79,25 @@ small = np.array([250] , dtype=np.uint8)
 print("250 + 10  =  " ,small+10 )
 # wraps silently without any error 
 
+# print(np.array([129] , dtype=np.int8))
+
+small = np.array([250], dtype=np.uint8)
+print("250 + 10 =", small + 10)          # wraps, silently
+"""
+small = np.array([250], dtype=np.uint8)
+print("250 + 10 =", small + 10)          # wraps, silently
+
+
+np.array([250], dtype=np.uint8) -> ranges from 0 to 255 
+if we directly write this this will raise the error 
+but use the above case this will wrap you easily 
+
+
+"""
+
+# adding the floating values in the python numpy is very hard beacuse they required the precision but to get the arrrox results or else the results that is similar that is if we add 2 float values like  (e.g., $0.1 + 0.2 = 0.30000000000000004) like this you need to have the presicion but if you use the `isclose()` function you will not be requied to have this amount of the precision
+a = np.array([1.0, 2.00000001, 3.0])
+b = np.array([1.0, 2.0,        3.1])
+
+print(np.isclose(a, b))
+# Output: [ True  True False]
